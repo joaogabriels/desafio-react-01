@@ -26,13 +26,12 @@ export function TaskList() {
       isComplete: false
     }
 
-    setTasks(oldState => [...oldState, addTask]) // o oldstate serve para não remover as "tasks" antigas. 
+    setTasks(oldState => [...oldState, addTask]) // O oldstate serve para não remover as "tasks" antigas. 
     setNewTaskTitle('')
   }
 
   function handleToggleTaskCompletion(id: number) {
-    // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
-    const completeTask = tasks.map(task => task.id === id ? {
+    const completeTask = tasks.map(task => task.id === id ? {  //Mapeia a task selecionada para mudar o "isComplete" para true
       ...task,
       isComplete: !task.isComplete
     } : task);
